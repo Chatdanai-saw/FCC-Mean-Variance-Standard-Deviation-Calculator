@@ -1,11 +1,14 @@
 import numpy as np
 
 def calculate(list):
+    # Check if list has 9 numbers in it
     if len(list) != 9:
         raise ValueError("List must contain nine numbers.")
 
+    # Convert list to 3x3 matrix
     matrix = np.array(list).reshape(3,3)
 
+    # Output as dictionary
     calculations = {
         'mean': [np.mean(matrix, axis=0).tolist(),
             np.mean(matrix, axis=1).tolist(),
@@ -36,7 +39,6 @@ def calculate(list):
             np.sum(matrix, axis=1).tolist(),
             matrix.sum()
             ],
-
     }
 
     return calculations
